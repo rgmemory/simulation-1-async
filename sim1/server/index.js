@@ -1,10 +1,14 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const massive = require('massive');
+const controller = require('./controller')
 require('dotenv').config();
-
-
 //shelf
+
+
+
+
+
 
 const app = express();
 
@@ -14,11 +18,11 @@ massive(process.env.CONNECTION_STRING).then(db => {
     app.set('db', db);
 })
 
-app.get('/get', function(req, res){
-    req.app.get('db').getshelf().then(shelf => {
-        res.send(shelf);
-    })
-})
+
+
+app.get('/api/shelves', controller.getShelves)
+
+app.get('/api/shelf/:id', controller.getShelf)
 
 app.listen(3005, () => {
     console.log("working on 3005");

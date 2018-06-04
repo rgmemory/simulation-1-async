@@ -13,6 +13,7 @@ export default class Bin extends Component{
     render(){
         return(
             <div>
+                Header
                 Bin
             </div>
         )

@@ -13,6 +13,7 @@ export default class Addbin extends Component{
     render(){
         return(
             <div>
+                Header
                 Addbin
             </div>
         )
