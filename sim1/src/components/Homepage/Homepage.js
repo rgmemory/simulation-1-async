@@ -34,13 +34,12 @@ export default class Homepage extends Component{
     render(){
         return(
             <div>
-                Header
                 Homepage
 
-                <Link to="/api/shelf/A"> <button>A </button></Link>
-                <Link to="/api/shelf/B"> <button>B </button></Link>
-                <Link to="/api/shelf/C"> <button>C </button></Link>
-                <Link to="/api/shelf/D"> <button>D </button></Link>
+                <Link to="/shelf/A"> <button>A </button></Link>
+                <Link to="/shelf/B"> <button>B </button></Link>
+                <Link to="/shelf/C"> <button>C </button></Link>
+                <Link to="/shelf/D"> <button>D </button></Link>
 
                 {/* <Shelfbutton getShelf ={this.getShelf}/> */}
             </div>

@@ -11,5 +11,9 @@ module.exports = {
         req.app.get('db').get_shelf([req.params.id]).then(shelf => {
             res.send(shelf);
         })
+    },
+
+    getBin: function(req, res){
+        console.log('getbin')
     }
 }

@@ -14,7 +14,6 @@ export default class Shelf extends Component{
     }
 
     componentDidMount(){
-        // console.log("this props works")
         axios.get(`/api/shelf/${this.props.match.params.id}`).then(res => {
             this.setState({
                 bins: res.data
@@ -22,21 +21,17 @@ export default class Shelf extends Component{
         })
     }
 
-
-
-    render(){
-
-        
+    render(){        
 
         let formattedBins = this.state.bins.map((current, index) => {
             return (
                 <div key={current + index}>
-                    <Link to="/bin"><button>Bin {current.bin_id}</button></Link>
+                    <Link to={`/bin/${this.props.match.params.id}/${current.bin_id}`}><button>Bin {current.bin_id}</button></Link>
+                    {/* <Link to="/bin"><Bin bin={current}/></Link> */}
                 </div>
             )
         })
 
-        // console.log("bins", this.state.bins[0])
         return(
             <div>
                 

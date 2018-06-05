@@ -9,8 +9,8 @@ import Shelf from './components/Shelf/Shelf';
 export default(
     <Switch >
         <Route exact path ="/" component={Homepage}/>
-        <Route path="/api/shelf/:id" component={Shelf}/>
-        <Route path="/bin" component={Bin}/>
+        <Route path="/shelf/:id" component={Shelf}/>
+        <Route path="/bin/:shelf_id/:bin_id" component={Bin}/>
         <Route path="/addbin" component={Addbin}/>
     </Switch>
 )
