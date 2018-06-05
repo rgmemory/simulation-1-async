@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-export default class Bin extends Component{
+export default class Edit extends Component{
 
     constructor(){
         super()
@@ -14,11 +14,10 @@ export default class Bin extends Component{
         }
     }
 
-    ///////////////////////write the function that sends the bin over
     componentDidMount(){
-        // console.log("bin mounted")
+        // console.log("edit bin mounted", this.props.match.params.shelf_id)
         axios.get(`/api/getbin/${this.props.match.params.shelf_id}/${this.props.match.params.bin_id}`).then(res => {
-            // console.log(res.data[0].name, res.data[0].price)
+            console.log(res.data[0].name, res.data[0].price)
             this.setState({
                 name: res.data[0].name,
                 price: res.data[0].price
@@ -31,6 +30,9 @@ export default class Bin extends Component{
     render(){
         return(
             <div>
+                
+                EDIT
+
                 <div>Shelf {this.props.match.params.shelf_id}</div>
                 <div>Bin {this.props.match.params.bin_id}</div>
                 
@@ -39,12 +41,10 @@ export default class Bin extends Component{
                 <div>Name: {this.state.name}</div>
                 <div>Price: ${this.state.price}</div>
 
-                {/* <Link to="/edit"> <button>EDIT</button> </Link> */}
 
-                <Link to={`/edit/${this.props.match.params.shelf_id}/${this.props.match.params.bin_id}`}> <button>Edit </button></Link>
+                <Link to="/edit"> <button>Save </button></Link>
                 <button>DELETE</button>
-                {/* <Link to="addbin"> <button> Bin {this.props.bin.bin_id} </button> </Link> */}
-                {/* <Link to="/addbin"> <button> Bin  </button> </Link> */}
+              
 
                 
             </div>

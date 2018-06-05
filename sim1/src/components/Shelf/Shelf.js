@@ -19,26 +19,38 @@ export default class Shelf extends Component{
                 bins: res.data
             })
         })
+
+        // console.log("hey")
     }
 
     render(){        
 
         let formattedBins = this.state.bins.map((current, index) => {
-            return (
-                <div key={current + index}>
-                    <Link to={`/bin/${this.props.match.params.id}/${current.bin_id}`}><button>Bin {current.bin_id}</button></Link>
-                    {/* <Link to="/bin"><Bin bin={current}/></Link> */}
-                </div>
-            )
+
+            if(current.name === null){
+                return(
+                    <div key={current + index}>
+                        <Link to={`/addbin/${this.props.match.params.id}/${current.bin_id}`}><button>+ Add Inventory</button></Link>
+                    </div>
+                )
+            }else{
+                return (
+                    <div key={current + index}>
+                        <Link to={`/bin/${this.props.match.params.id}/${current.bin_id}`}><button>Bin {current.bin_id}</button></Link>
+                    </div>
+                )
+
+            }
+            
         })
 
         return(
             <div>
                 
-                Shelf
+                
                 
                 <div>
-                    {this.props.match.params.id}
+                    Shelf {this.props.match.params.id}
                 </div>
                 
                 {formattedBins}
