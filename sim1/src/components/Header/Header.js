@@ -1,15 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './Header.css';
 
-export default function Shelfbutton(props){
+export default function Header(props){
 
   
 
     return(
-        <div>
+        <div className="Header">
             {/* {formatedShelfIds} */}
 
-            <Link to='/'><button>Home</button> </Link>
+            <Link to='/'><button>SHELFIE</button> </Link>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 // import Shelfbutton from './Shelfbutton/Shelfbutton'
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import './Homepage.css';
 
 export default class Homepage extends Component{
 
@@ -15,14 +16,7 @@ export default class Homepage extends Component{
         this.getShelf = this.getShelf.bind(this);
     }
 
-    componentDidMount(){
-        // console.log('axios')
-        // axios.get('/api/shelves').then(res => {
-        //     console.log(res.data)
-        // }).catch(e => {
-        //     console.log(e);
-        // })
-    }
+   
 
     getShelf(id){
         console.log(id, "current");
@@ -33,8 +27,8 @@ export default class Homepage extends Component{
 
     render(){
         return(
-            <div>
-                Shelfie
+            <div className="Homepage">
+                
 
                 <Link to="/shelf/A"> <button>Shelf A </button></Link>
                 <Link to="/shelf/B"> <button>Shelf B </button></Link>

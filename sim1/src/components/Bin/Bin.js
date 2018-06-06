@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import './Bin.css'
 
 export default class Bin extends Component{
 
@@ -10,15 +11,15 @@ export default class Bin extends Component{
         this.state = {
             img: '',
             name: '',
-            price: 0
+            price: 0,
+            editable: false
         }
+
+        this.editable = this.editable.bind(this);
     }
 
-    ///////////////////////write the function that sends the bin over
     componentDidMount(){
-        // console.log("bin mounted")
         axios.get(`/api/getbin/${this.props.match.params.shelf_id}/${this.props.match.params.bin_id}`).then(res => {
-            // console.log(res.data[0].name, res.data[0].price)
             this.setState({
                 name: res.data[0].name,
                 price: res.data[0].price
@@ -28,27 +29,46 @@ export default class Bin extends Component{
         })
     }
 
+    editable(){
+        this.setState({
+            editable: !this.state.editable
+        })
+    }
+
     render(){
-        return(
-            <div>
-                <div>Shelf {this.props.match.params.shelf_id}</div>
-                <div>Bin {this.props.match.params.bin_id}</div>
-                
-                
+        console.log(this.state.editable)
 
-                <div>Name: {this.state.name}</div>
-                <div>Price: ${this.state.price}</div>
+       return(
+        <div>
+            <div>Shelf {this.props.match.params.shelf_id} </div>
+            <div>Bin {this.props.match.params.bin_id} </div>
 
-                {/* <Link to="/edit"> <button>EDIT</button> </Link> */}
+                <div className="inputs">
+                    Name:<input type="text" disabled={!this.state.editable} placeholder={this.state.name}/>
+                    Price:<input type="text" disabled={!this.state.editable} placeholder={this.state.price}/>
+                </div>
+            
+                {
+                    this.state.editable == false ? 
+                    
+                    <div className="initial">
+                        <button onClick={this.editable}>EDIT</button>
+                    </div>
 
-                <Link to={`/edit/${this.props.match.params.shelf_id}/${this.props.match.params.bin_id}`}> <button>Edit </button></Link>
-                <button>DELETE</button>
-                {/* <Link to="addbin"> <button> Bin {this.props.bin.bin_id} </button> </Link> */}
-                {/* <Link to="/addbin"> <button> Bin  </button> </Link> */}
+                    :
 
-                
+                    <div className="save">
+                        <button onClick={this.editable}>SAVE</button>
+                    </div>
+                }
+
+            <div className="initial">
+                <button >DELETE</button>
             </div>
-        )
+        </div>
+       )
+        
+     
     }
 
 }
