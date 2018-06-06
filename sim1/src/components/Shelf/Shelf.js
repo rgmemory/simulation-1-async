@@ -28,13 +28,13 @@ export default class Shelf extends Component{
             if(current.name === null){
                 return(
                     <div key={current + index}>
-                        <Link to={`/addbin/${this.props.match.params.id}/${current.bin_id}`}><button className="add_inventory">+ Add Inventory</button></Link>
+                        <Link to={`/addbin/${this.props.match.params.id}/${current.bin_id}`}><button className="add_inventory button">+ Add Inventory</button></Link>
                     </div>
                 )
             }else{
                 return (
                     <div key={current + index}>
-                        <Link to={`/bin/${this.props.match.params.id}/${current.bin_id}`}><button className="bin_button">Bin {current.bin_id}</button></Link>
+                        <Link to={`/bin/${this.props.match.params.id}/${current.bin_id}`}><button className="bin_button button">Bin {current.bin_id}</button></Link>
                     </div>
                 )
             }            
