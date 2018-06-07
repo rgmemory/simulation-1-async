@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './Bin.css'
+import Header from '../Header/Header'
 
 export default class Bin extends Component{
 
@@ -61,33 +62,46 @@ export default class Bin extends Component{
     }
 
     render(){
+        console.log("Bin", this.props.match)
        return(
         <div>
-            <div>Shelf {this.props.match.params.shelf_id} </div>
-            <div>Bin {this.props.match.params.bin_id} </div>
+        <Header match={this.props.match}/>
+        <div className="bin">
+            {/* <div>Shelf {this.props.match.params.shelf_id} </div>
+            <div>Bin {this.props.match.params.bin_id} </div> */}
 
-                <div className="inputs">
-                    Name:<input onChange={e => {this.updateName(e.target.value)}} type="text" disabled={!this.state.editable} placeholder={this.state.name}/>
-                    Price:<input onChange={e => {this.updatePrice(e.target.value)}} type="text" disabled={!this.state.editable} placeholder={this.state.price}/>
-                </div>
-            
-                {
-                    this.state.editable == false ? 
+            <div className="inner-bin">
+                
+                <div className="image"></div>
+
+                <div className="interactions">
                     
-                    <div className="initial">
-                        <button onClick={this.editable}>EDIT</button>
+                    <div className="inputs">
+                        <div>Name<input onChange={e => {this.updateName(e.target.value)}} type="text" disabled={!this.state.editable} placeholder={this.state.name}/></div>
+                        <div>Price<input onChange={e => {this.updatePrice(e.target.value)}} type="text" disabled={!this.state.editable} placeholder={this.state.price}/></div>
                     </div>
 
-                    :
+                    <div className="buttons">
+                        {
+                            this.state.editable == false ? 
+                            
+                            <div className="initial">
+                                <button onClick={this.editable}>EDIT</button>
+                            </div>
+                            :
+                            <div className="save">
+                                <Link to={`/shelf/${this.props.match.params.shelf_id}`}> <button onClick={this.editable}>SAVE</button> </Link>
+                            </div>
+                        }
 
-                    <div className="save">
-                        <Link to={`/shelf/${this.props.match.params.shelf_id}`}> <button onClick={this.editable}>SAVE</button> </Link>
+                        <div className="initial">
+                            <Link to={`/shelf/${this.props.match.params.shelf_id}`}><button onClick={this.delete}>DELETE</button> </Link>
+                        </div>
+
                     </div>
-                }
-
-            <div className="initial">
-                <Link to={`/shelf/${this.props.match.params.shelf_id}`}><button onClick={this.delete}>DELETE</button> </Link>
+                </div>
             </div>
+        </div>
         </div>
        )
         
@@ -95,3 +109,4 @@ export default class Bin extends Component{
     }
 
 }
+////////////get the info to appear in the div

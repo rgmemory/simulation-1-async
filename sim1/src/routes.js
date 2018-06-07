@@ -10,7 +10,7 @@ import Edit from './components/Edit/Edit';
 export default(
     <Switch >
         <Route exact path ="/" component={Homepage}/>
-        <Route path="/shelf/:id" component={Shelf}/>
+        <Route path="/shelf/:shelf_id" component={Shelf}/>
         <Route path="/bin/:shelf_id/:bin_id" component={Bin}/>
         <Route path="/edit/:shelf_id/:bin_id" component={Edit}/>
         <Route path="/addbin/:shelf_id/:bin_id" component={Addbin}/>

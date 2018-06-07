@@ -14,8 +14,6 @@ massive(process.env.CONNECTION_STRING).then(db => {
     app.set('db', db);
 })
 
-app.get('/api/shelves', controller.getShelves)
-
 app.get('/api/shelf/:id', controller.getShelf)
 
 app.get('/api/getbin/:shelf_id/:bin_id', controller.getBin)

@@ -1,6 +1,91 @@
-/* .initial {
-    color: pink;
-} */
+
+.bin{
+    border: solid black 1px;
+    height: 85vh;
+    width: 100%;
+}
+
+.inner-bin{
+    border: solid red 1px;
+    height: 60vh;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image{
+    border: solid indigo 2px;
+    height: 300px;
+    width: 300px;
+}
+
+.interactions{
+    border: solid pink 2px;
+    height: 400px;
+    width: 800px;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs{
+    /* position: absolute; */
+    border: solid indigo 2px;
+    height: 75%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.inputs div{
+    /* margin-top: 10px; */
+}
+
+.inputs input{
+    /* border-color: #EB6C5E; */
+    border: solid #EB6C5E 1px;
+    border-radius: 5px;
+    height: 70px;
+    width: 500px;
+    
+}
+
+.buttons{
+    /* position: absolute; */
+    display: flex;
+    justify-content: space-between;
+    border: solid green 2px;
+    height: 25%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+/* 
+
+.Bin{
+    
+
+    border: solid 2px green;
+    height: 80vh;
+    
+}
+
+.Bin .everything{
+    display: flex;
+    border: solid 1px yellow;
+    justify-content: center;
+}
 
 .initial button {
     color: black;
@@ -20,9 +105,30 @@
     
 }
 
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+
 .inputs input{
     height: 50px;
     width: 400px;
     border: #F6B8B1 solid 1px;
     border-radius: 7px;
 }
+
+.Bin .buttons{
+    display: flex;
+    border: 1px black solid;
+}
+
+.Bin .interaction{
+    border: solid 1px black;
+    height: 200px;
+}
+
+.Bin .image{
+    height: 200px;
+    width: 200px;
+    border: solid 1px red;
+} */

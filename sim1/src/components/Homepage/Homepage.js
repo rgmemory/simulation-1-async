@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-// import Shelfbutton from './Shelfbutton/Shelfbutton'
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import './Homepage.css';
+import Header from '../Header/Header'
 
 export default class Homepage extends Component{
 
@@ -13,21 +13,25 @@ export default class Homepage extends Component{
 
         }
 
-        this.getShelf = this.getShelf.bind(this);
-    }
+        // this.getShelf = this.getShelf.bind(this);
+    }   
 
-   
-
-    getShelf(id){
-        console.log(id, "current");
-        axios.get('/api/shelf/' + id).then(res => {
-            console.log(res.data, " is the result")
-        })
-    }
+    // getShelf(id){
+    //     // console.log(id, "current");
+    //     axios.get('/api/shelf/' + id).then(res => {
+    //     })
+    // }
 
     render(){
+        // console.log("Homepage", this.props.match)
         return(
+            <div>
+            <Header match={this.props.match} />
+            {/* <Header location = {this.props.location} match={this.props.match} /> */}
             <div className="Homepage">
+
+
+                {/* <div className="Header">SHELFIE</div> */}
                 
 
                 <Link to="/shelf/A"> <button>Shelf A </button></Link>
@@ -35,6 +39,7 @@ export default class Homepage extends Component{
                 <Link to="/shelf/C"> <button>Shelf C </button></Link>
                 <Link to="/shelf/D"> <button>Shelf D </button></Link>
 
+            </div>
             </div>
         )
     }
