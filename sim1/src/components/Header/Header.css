@@ -1,38 +1,55 @@
-
 .header{
-    border: solid 1px black;
-    height: 13vh;
     background-color: #A92B20;
-    display: flex;
-    align-items: center;
+    height: 110px;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    color: white;
+    font-size: 33px
 }
 
-.header button{
-    color: black;
+
+
+.header .logo{
     height: 100%;
-    width: 100px;
-    background-image: url('../../logo.png');
-    border: none;
+    width: 30%;
+    background-color: #A92B20;
+    position: absolute;
+}
+
+.header .logo img{
+    height: 100%;
+    width: 150px;
 }
 
 .header .shelf{
-    background-color: #D1483B;
-    width: 200px;
     height: 100%;
-    color: white;
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    padding-left: 15px;
+    width: 90%;
+    background-color: #D1483B;
+    position: absolute;
+    right: 0;
+    box-sizing: border-box;
+}
+
+.header .shelf p{
+    padding-left: 20px;
 }
 
 .header .bin{
-    background-color: #EB6C5E;
-    width: 100%;
     height: 100%;
-    color: white;
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    padding-left: 15px;
+    width: 60%;
+    background-color:#EB6C5E;
+    position: absolute;
+    right: 0;
+    box-sizing: border-box;
+
 }
+
+.header .bin p{
+    padding-left: 20px;
+}
+
+
+
+
+

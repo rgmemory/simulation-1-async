@@ -15,8 +15,7 @@
     padding-right: 80px;
 }
 
-.image{
-    border: solid indigo 2px;
+.image img{
     height: 300px;
     width: 300px;
 }
@@ -40,11 +39,13 @@
 }
 
 .inputs input{
-    border-radius: 5px;
+    border: 2px solid #CF4940;
+    border-radius: 7px;
     height: 70px;
     width: 100%;
     font-size: 30px;
     font: bold;
+    background-color: #ede6e6;
 }
 
 .buttons{

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import logoimg from './logo.png'
 
 
 export default function Header(props) {
@@ -9,7 +10,7 @@ export default function Header(props) {
     <div className="header">
       <div className="logo">
         <Link to="/">
-          <button />
+          <img src={logoimg}/>
         </Link>
       </div>
 

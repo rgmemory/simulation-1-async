@@ -62,15 +62,17 @@ export default class Bin extends Component{
     }
 
     render(){
-        console.log("Bin", this.props.match)
-       return(
+
+        return(
         <div>
         <Header match={this.props.match}/>
         <div className="bin">
 
             <div className="inner-bin">
                 
-                <div className="image"></div>
+                <div className="image">
+                    <img src="https://target.scene7.com/is/image/Target/14025792?wid=520&hei=520&fmt=pjpeg" />
+                </div>
 
                 <div className="interactions">
                     

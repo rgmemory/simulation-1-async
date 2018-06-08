@@ -15,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    
 }
 
 .user-inputs div{
@@ -22,11 +23,12 @@
 }
 
 .addbin .user-inputs input{
-    width: 400px;
-    height: 50px;
+    width: 500px;
+    height: 70px;
     border-radius: 5px;
     border: #CF4940 solid 2px;
     font-size: 20px;
+    background-color: #ede6e6;
 }
 
 .add_button{

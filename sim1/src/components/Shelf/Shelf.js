@@ -23,7 +23,16 @@ export default class Shelf extends Component {
   }
 
   render() {
-    let formattedBins = this.state.bins.map((current, index) => {
+
+    let sortedArray = this.state.bins;
+
+    function compare(a, b){
+      return a.bin_id - b.bin_id;
+    }
+
+    sortedArray.sort(compare)
+
+    let formattedBins = sortedArray.map((current, index) => {
       if (current.name === null) {
         return (
           <div key={current + index}>
