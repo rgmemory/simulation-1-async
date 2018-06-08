@@ -1,12 +1,10 @@
 
 .bin{
-    /* border: solid black 1px; */
     height: 85vh;
     width: 100%;
 }
 
 .inner-bin{
-    /* border: solid red 1px; */
     height: 60vh;
     width: 90%;
     margin: auto;
@@ -24,53 +22,36 @@
 }
 
 .interactions{
-    /* border: solid pink 2px; */
     height: 400px;
     width: 700px;
-    /* position: relative; */
     display: flex;
     flex-direction: column;
-    /* padding-left: 50px; */
-    
 }
 
 .inputs{
-    /* position: absolute; */
-    /* border: solid indigo 2px; */
     height: 75%;
     width: 100%;
     flex-direction: column;
     display: flex;
-    
-    /* justify-content: center;
-    align-items: center; */
 }
 
 .inputs div{
-    /* margin-top: 10px; */
     margin-bottom: 25px;
 }
 
 .inputs input{
-    /* border-color: #EB6C5E; */
-    /* border: solid #EB6C5E 1px; */
     border-radius: 5px;
     height: 70px;
     width: 100%;
     font-size: 30px;
     font: bold;
-    
 }
 
 .buttons{
-    /* position: absolute; */
     display: flex;
     justify-content: space-between;
-    /* align-content: center; */
-    /* border: solid green 2px; */
     height: 25%;
     width: 100%;
-    
 }
 
 .buttons .initial button{
@@ -79,8 +60,6 @@
     background-color: #D7D7D7;
     border-radius: 7px;
     font-size: 30px;
-    /* font: bold; */
-    
 }
 
 

@@ -10,34 +10,12 @@
 }
 
 .Shelf{
-    border: solid red 1px;
     display: flex;
     flex-direction: column;
     background-color: #FCFAFA;
     align-items: center;
     height: 75vh;
-    
 }
-
-/* .Shelf .add_inventory{
-    color: white;
-    background-color: #D1483B;
-    height: 70px;
-    width: 500px;
-    margin-top: 10px;
-    border-radius: 8px;
-    font-size: 30px;
-}
-
-.Shelf .binbutton{
-    color: white;
-    background-color: #D1483B;
-    height: 70px;
-    width: 500px;
-    margin-top: 10px;
-    border-radius: 8px;
-    font-size: 30px;
-} */
 
 .button{
     height: 70px;
@@ -50,11 +28,9 @@
 .bin_button{
     background-color: #D1483B;
     color: white;
-    
 }
 
 .add_inventory{
     background-color: #FDB8B0;
     color: black;
-    
 }

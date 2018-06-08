@@ -74,7 +74,6 @@ export default class Addbin extends Component{
 
                 </div>
 
-                
             </div>
         )
     }

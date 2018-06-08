@@ -15,7 +15,6 @@ export default class Shelf extends Component {
   }
 
   componentDidMount() {
-    // console.log("shelf called")
     axios.get(`/api/shelf/${this.props.match.params.shelf_id}`).then(res => {
       this.setState({
         bins: res.data
@@ -24,8 +23,6 @@ export default class Shelf extends Component {
   }
 
   render() {
-    // console.log("shelf", this.props.match.params);
-
     let formattedBins = this.state.bins.map((current, index) => {
       if (current.name === null) {
         return (
@@ -60,9 +57,6 @@ export default class Shelf extends Component {
       <div>
           <Header match={this.props.match} />
           <div className="Shelf">
-          {/* <div className="Shelf">SHELFIE</div> */}
-
-          <div>Shelf {this.props.match.params.shelf_id}</div>
 
           <div className="button">{formattedBins}</div>
         </div>

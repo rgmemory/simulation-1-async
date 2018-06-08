@@ -67,8 +67,6 @@ export default class Bin extends Component{
         <div>
         <Header match={this.props.match}/>
         <div className="bin">
-            {/* <div>Shelf {this.props.match.params.shelf_id} </div>
-            <div>Bin {this.props.match.params.bin_id} </div> */}
 
             <div className="inner-bin">
                 
@@ -104,9 +102,5 @@ export default class Bin extends Component{
         </div>
         </div>
        )
-        
-     
     }
-
 }
-////////////get the info to appear in the div

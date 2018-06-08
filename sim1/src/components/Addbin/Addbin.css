@@ -1,8 +1,5 @@
 
-
-
 .user-interactions{
-    border: solid /1px black;
     height: 400px;
     width: 100%;
     display: flex;
@@ -10,11 +7,9 @@
     align-items: center;
     box-sizing: border-box;
     flex-direction: column;
-    /* margin-bottom: 20px; */
 }
 
 .user-inputs{
-    bord/er: solid 1px black;
     height: 300px;
     width: 500px;
     display: flex;
@@ -33,11 +28,6 @@
     border: #CF4940 solid 2px;
     font-size: 20px;
 }
-
-
-
-
-
 
 .add_button{
     background-color: #4CF79E;
