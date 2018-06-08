@@ -77,8 +77,8 @@ export default class Bin extends Component{
                 <div className="interactions">
                     
                     <div className="inputs">
-                        <div>Name<input onChange={e => {this.updateName(e.target.value)}} type="text" disabled={!this.state.editable} placeholder={this.state.name}/></div>
-                        <div>Price<input onChange={e => {this.updatePrice(e.target.value)}} type="text" disabled={!this.state.editable} placeholder={this.state.price}/></div>
+                        <div><div>Name</div><input onChange={e => {this.updateName(e.target.value)}} type="text" disabled={!this.state.editable} placeholder={this.state.name}/></div>
+                        <div><div>Price</div><input onChange={e => {this.updatePrice(e.target.value)}} type="text" disabled={!this.state.editable} placeholder={this.state.price}/></div>
                     </div>
 
                     <div className="buttons">

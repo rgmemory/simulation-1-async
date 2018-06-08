@@ -5,21 +5,29 @@ import "./Header.css";
 // import PropTypes from 'prop-types'
 
 export default function Header(props) {
-  console.log(
-    " shelf",
-    props.match.params.shelf_id,
-    " bin",
-    props.match.params.bin_id
-  );
-  console.log(props.match.params.shelf_id);
+  //   console.log(
+  //     " shelf",
+  //     props.match.params.shelf_id,
+  //     " bin",
+  //     props.match.params.bin_id
+  //   );
+  //   console.log(props.match.params.shelf_id);
   return (
-    <div>
-      <Link to="/">
-        <button>SHELFIE</button>{" "}
-      </Link>
+    <div className="header">
+      <div className="logo">
+        <Link to="/">
+          <button>SHELFIE</button>
+        </Link>
+      </div>
+
+      {!props.match.params.shelf_id && !props.match.params.bin_id ? (
+        <div className="nothing">There is nothing to display</div>
+      ) : null}
 
       {props.match.params.shelf_id ? (
-        <div>There is a shelf {props.match.params.shelf_id}</div>
+        <div className="shelf">
+          There is a shelf {props.match.params.shelf_id}
+        </div>
       ) : (
         <div>No shelves</div>
       )
@@ -27,11 +35,10 @@ export default function Header(props) {
       }
 
       {props.match.params.bin_id ? (
-        <div>Bin {props.match.params.bin_id}</div>
+        <div className="bin">Bin {props.match.params.bin_id}</div>
       ) : (
         <div>No bins</div>
       )}
-
     </div>
   );
 }

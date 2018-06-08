@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import Header from '../Header/Header'
 
 export default class Edit extends Component{
 
@@ -31,7 +32,7 @@ export default class Edit extends Component{
         return(
             <div>
                 
-                EDIT
+                <Header match={this.props.match}/>
 
                 <div>Shelf {this.props.match.params.shelf_id}</div>
                 <div>Bin {this.props.match.params.bin_id}</div>

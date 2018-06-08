@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './Addbin.css'
+import Header from '../Header/Header'
 
 export default class Addbin extends Component{
 
@@ -20,29 +21,23 @@ export default class Addbin extends Component{
     }
 
     addName(value){
-        console.log(value)
         this.setState({
             name: value
         })
     }
 
     addPrice(value){
-        console.log(value)
-
         this.setState({
             price: value
         })
     }
 
     addInventory(){
-        console.log('addd')
         axios.post(`/api/add/${this.props.match.params.shelf_id}/${this.props.match.params.bin_id}`, {name: this.state.name, price: this.state.price})
     }
 
     componentDidMount(){
-        console.log("addbin mounted", this.props.match.params.shelf_id, this.props.match.params.bin_id)
         axios.get(`/api/getbin/${this.props.match.params.shelf_id}/${this.props.match.params.bin_id}`).then(res => {
-            console.log("addbin", res.data[0].name, res.data[0].price, res.data[0])
             this.setState({
                 name: res.data[0].name,
                 price: res.data[0].price
@@ -54,22 +49,30 @@ export default class Addbin extends Component{
 
     render(){
         return(
-            <div>
-                <div>Shelf {this.props.match.params.shelf_id}</div>
-                <div>Bin {this.props.match.params.bin_id}</div>
+            <div className="addbin">
 
-                <div>Name: {this.state.name}</div>
-                <div>Price: ${this.state.price}</div>
+                <Header match={this.props.match}/>
 
+                <div className="user-interactions">
 
-                <input type="text" onChange={e => {this.addName(e.target.value)}}/>
-                <input type="text" onChange={e => {this.addPrice(e.target.value)}}/>
+                    <div className="user-inputs">
 
+                        <div className="input">
+                            <div>Name</div>
+                            <div><input type="text" onChange={e => {this.addName(e.target.value)}} placeholder={this.state.name}/></div>
 
-                <Link to={`/shelf/${this.props.match.params.shelf_id}`}>
-                    <button className="add_button" onClick={this.addInventory}>+ Add Inventory</button>
-                </Link>
-              
+                            <div>Price</div>
+                            <div><input type="text" onChange={e => {this.addPrice(e.target.value)}}
+                            placeholder={this.state.price}/></div>
+                        </div>
+
+                    </div>
+
+                    <Link to={`/shelf/${this.props.match.params.shelf_id}`}>
+                        <button className="add_button" onClick={this.addInventory}>+ Add Inventory</button>
+                    </Link>
+
+                </div>
 
                 
             </div>
