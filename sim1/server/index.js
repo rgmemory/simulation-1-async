@@ -1,7 +1,7 @@
+const controller = require('./controller')
 const bodyParser = require('body-parser');
 const express = require('express');
 const massive = require('massive');
-const controller = require('./controller')
 require('dotenv').config();
 //shelves
 

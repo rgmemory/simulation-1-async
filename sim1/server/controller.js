@@ -21,12 +21,14 @@ module.exports = {
     addItem: function(req, res){
         req.app.get('db').add_bin([req.params.shelf_id, req.params.bin_id, req.body.name, req.body.price]).then(bin => {
             //////////
+            res.sendStatus(200);
         })
     },
     
     deleteItem: function(req, res){
         req.app.get('db').delete_bin([req.params.shelf_id, req.params.bin_id]).then(shelf => {
             ////////
+            res.sendStatus(200);
         })
     }
 }

@@ -55,9 +55,8 @@ export default class Bin extends Component{
     }
 
     delete(){
-        console.log('delete')
         axios.delete(`/api/delete/${this.props.match.params.shelf_id}/${this.props.match.params.bin_id}`).then(res => {
-            console.log(res);
+            this.props.history.push(`/shelf/${this.props.match.params.shelf_id}`)
         })
     }
 
@@ -95,7 +94,7 @@ export default class Bin extends Component{
                         }
 
                         <div className="initial">
-                            <Link to={`/shelf/${this.props.match.params.shelf_id}`}><button onClick={this.delete}>DELETE</button> </Link>
+                            <button onClick={this.delete}>DELETE</button>
                         </div>
 
                     </div>

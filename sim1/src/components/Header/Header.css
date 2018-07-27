@@ -19,12 +19,12 @@
 
 .header .logo img{
     height: 100%;
-    width: 150px;
+    width: 130px;
 }
 
 .header .shelf{
     height: 100%;
-    width: 90%;
+    width: 89%;
     background-color: #D1483B;
     position: absolute;
     right: 0;
